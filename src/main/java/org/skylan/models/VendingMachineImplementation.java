@@ -6,7 +6,7 @@ public class VendingMachineImplementation implements VendingMachine{
     private final Product[] products;
 
     public VendingMachineImplementation(){
-        products = new Product[2];
+        products = new Product[3];
         products[0] = new ChocolateBar(1,25, "Marabou apelsinkrokant", "250g", "Nuts", 1000, "Plastic wrap");
         products[1] = new Cider(2,25, "Apple cider", "330ml", "Apple", 150, "Plastic bottle");
         products[2] = new Fruit(3,25, "Pear", "250g", 60);
