@@ -1,8 +1,6 @@
 package org.skylan.models;
 
-import org.skylan.sequencer.ProductNumberSequencer;
-
-public class AppleCider implements Product{
+public class Cider implements Product{
 
     private int productNumber;
     private int price;
@@ -12,7 +10,7 @@ public class AppleCider implements Product{
     private int calories;
     private String packaging;
 
-    public AppleCider(int productNumber, int price, String name, String size, String allergens, int calories, String packaging){
+    public Cider(int productNumber, int price, String name, String size, String allergens, int calories, String packaging){
         this.productNumber = productNumber;
         this.price = price;
         this.name = name;
@@ -21,8 +19,6 @@ public class AppleCider implements Product{
         this.calories = calories;
         this.packaging = packaging;
     }
-
-    public AppleCider(int price, String name, String size, String allergens, int calories, String packaging){this(ProductNumberSequencer.getNextId(), price, name, size, allergens, calories, packaging)}
 
     @Override
     public String examine() {

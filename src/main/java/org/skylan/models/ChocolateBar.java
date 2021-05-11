@@ -1,7 +1,5 @@
 package org.skylan.models;
 
-import org.skylan.sequencer.ProductNumberSequencer;
-
 public class ChocolateBar implements Product{
 
     private int productNumber;
@@ -21,8 +19,6 @@ public class ChocolateBar implements Product{
         this.calories = calories;
         this.packaging = packaging;
     }
-
-    public ChocolateBar(int price, String name, String size, String allergens, int calories, String packaging){this(ProductNumberSequencer.getNextId(), price, name, size, allergens, calories, packaging);}
 
     @Override
     public String examine() {
