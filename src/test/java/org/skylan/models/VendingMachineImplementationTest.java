@@ -3,6 +3,8 @@ package org.skylan.models;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class VendingMachineImplementationTest {
 
     VendingMachineImplementation vendingMachine;
@@ -14,7 +16,9 @@ class VendingMachineImplementationTest {
 
     @Test
     void addCurrency() {
-        vendingMachine.addCurrency(5);
+        int expected = 5;
+        vendingMachine.addCurrency(expected);
+        assertEquals(expected, vendingMachine.getBalance());
     }
 
     @Test
