@@ -1,7 +1,10 @@
 package org.skylan.models;
 
+import org.skylan.sequencer.ProductNumberSequencer;
+
 public class ChocolateBar implements Product{
 
+    private int productNumber;
     private int price;
     private String name;
     private String size;
@@ -9,8 +12,17 @@ public class ChocolateBar implements Product{
     private int calories;
     private String packaging;
 
-    public ChocolateBar(String name, String size, String allergens, int calories, String packaging){
+    public ChocolateBar(int productNumber, int price, String name, String size, String allergens, int calories, String packaging){
+        this.productNumber = productNumber;
+        this.price = price;
+        this.name = name;
+        this.size = size;
+        this.allergens = allergens;
+        this.calories = calories;
+        this.packaging = packaging;
     }
+
+    public ChocolateBar(int price, String name, String size, String allergens, int calories, String packaging){this(ProductNumberSequencer.getNextId(), price, name, size, allergens, calories, packaging);}
 
     @Override
     public String examine() {
