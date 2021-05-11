@@ -16,6 +16,15 @@ public class Fruit implements Product{
         this.calories = calories;
     }
 
+    public String getInfo(){
+        return name + productNumber;
+    }
+
+    @Override
+    public int getProductNumber() {
+        return productNumber;
+    }
+
     @Override
     public String examine() {
         return null;

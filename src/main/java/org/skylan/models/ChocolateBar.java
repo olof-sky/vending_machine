@@ -20,6 +20,15 @@ public class ChocolateBar implements Product{
         this.packaging = packaging;
     }
 
+    public String getInfo(){
+        return name + productNumber;
+    }
+
+    @Override
+    public int getProductNumber() {
+        return productNumber;
+    }
+
     @Override
     public String examine() {
         return "name: " + name + " size: " + size + " allergens: " + allergens + " calories: " + calories + " packaging: " + packaging;
