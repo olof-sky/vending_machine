@@ -14,7 +14,11 @@ public class BuyProduct {
                 System.out.println(product);
             }
             int choice = scanner.nextInt();
-            App.getVendingMachineInstance().request(choice);
+            try {
+                System.out.println(App.getVendingMachineInstance().request(choice).use());
+            } catch (NullPointerException needMoreMoney) {
+                System.out.println("Not enough money in the deposit");
+            }
             shopping = false;
         }
     }

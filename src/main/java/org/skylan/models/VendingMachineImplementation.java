@@ -23,11 +23,10 @@ public class VendingMachineImplementation implements VendingMachine{
             if (productNumber == product.getProductNumber()){
                 if(depositPool > product.getPrice()){
                     depositPool -= product.getPrice();
-                    System.out.println(product.use());
-                }else{ System.out.println("Need more money to add item"); }
+                    return product;
+                }
             }
-        }
-        return null;
+        }return null;
     }
 
     @Override

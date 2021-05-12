@@ -23,7 +23,7 @@ class VendingMachineImplementationTest {
 
     @Test
     void request() {
-
+        Product expected = vendingMachine.request(1);
     }
 
     @Test
