@@ -2,14 +2,14 @@ package org.skylan.models;
 
 public class VendingMachineImplementation implements VendingMachine{
 
-    private int depositPool;
+    public int depositPool;
     private final Product[] products;
 
     public VendingMachineImplementation(){
         products = new Product[3];
         products[0] = new ChocolateBar(1,25, "Marabou apelsinkrokant", "250g", "Nuts", 1000, "Plastic wrap");
         products[1] = new Cider(2,25, "Apple cider", "330ml", "Apple", 150, "Plastic bottle");
-        products[2] = new Fruit(3,25, "Pear", "250g", 60);
+        products[2] = new Fruit(3,25, "Pear", "100g", 60);
     }
 
     @Override
@@ -21,7 +21,10 @@ public class VendingMachineImplementation implements VendingMachine{
     public Product request(int productNumber) {
         for (Product product : products){
             if (productNumber == product.getProductNumber()){
-                product.use();
+                System.out.println(product.use());
+                if(depositPool > product.getPrice()){
+                    depositPool -= product.getPrice();
+                }else{ System.out.println("Need more money to add item"); }
             }
         }
         return null;
@@ -36,10 +39,9 @@ public class VendingMachineImplementation implements VendingMachine{
     public String getDescription(int productNumber) {
         for (Product product : products){
             if (productNumber == product.getProductNumber()){
-                product.examine();
+                return product.examine();
             }
-        }
-        return null;
+        }return null;
     }
 
     @Override

@@ -21,8 +21,10 @@ public class Cider implements Product{
     }
 
     public String getInfo(){
-        return name + productNumber;
+        return productNumber + ": " + name;
     }
+
+    public int getPrice(){return price;}
 
     @Override
     public int getProductNumber() {
@@ -31,11 +33,11 @@ public class Cider implements Product{
 
     @Override
     public String examine() {
-        return "name: " + name + " size: " + size + " allergens: " + allergens + " calories: " + calories + " packaging: " + packaging;
+        return "name: " + name + " / size: " + size + " / allergens: " + allergens + " / calories: " + calories + " / packaging: " + packaging;
     }
 
     @Override
     public String use() {
-        return "You put " + name + " in the basket.";
+        return "You bought " + name;
     }
 }

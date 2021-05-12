@@ -21,8 +21,10 @@ public class ChocolateBar implements Product{
     }
 
     public String getInfo(){
-        return name + productNumber;
+        return productNumber + ": " + name;
     }
+
+    public int getPrice(){return price;}
 
     @Override
     public int getProductNumber() {
@@ -31,13 +33,9 @@ public class ChocolateBar implements Product{
 
     @Override
     public String examine() {
-        return "name: " + name + " size: " + size + " allergens: " + allergens + " calories: " + calories + " packaging: " + packaging;
+        return "name: " + name + " / size: " + size + " / allergens: " + allergens + " / calories: " + calories + " / packaging: " + packaging;
     }
 
     @Override
-    public String use() {
-        // TODO
-        // withdraw price from the deposit pool
-        return "You put " + name + " in the basket.";
-    }
+    public String use() { return "You bought " + name; }
 }

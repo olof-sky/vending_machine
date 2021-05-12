@@ -16,9 +16,9 @@ public class Fruit implements Product{
         this.calories = calories;
     }
 
-    public String getInfo(){
-        return name + productNumber;
-    }
+    public String getInfo(){ return productNumber + ": " + name; }
+
+    public int getPrice(){return price;}
 
     @Override
     public int getProductNumber() {
@@ -27,11 +27,11 @@ public class Fruit implements Product{
 
     @Override
     public String examine() {
-        return null;
+        return "name: " + name + " / size: " + size  + " / calories: " + calories;
     }
 
     @Override
     public String use() {
-        return "You put " + name + " in the basket.";
+        return "You bought " + name;
     }
 }
