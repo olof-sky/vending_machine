@@ -8,8 +8,8 @@ public class VendingMachineImplementation implements VendingMachine{
     public VendingMachineImplementation(){
         products = new Product[3];
         products[0] = new ChocolateBar(1,25, "Marabou apelsinkrokant", "250g", "Nuts", 1000, "Plastic wrap");
-        products[1] = new Cider(2,25, "Apple cider", "330ml", "Apple", 150, "Plastic bottle");
-        products[2] = new Fruit(3,25, "Pear", "100g", 60);
+        products[1] = new Cider(2,30, "Apple cider", "330ml", "Apple", 150, "Plastic bottle");
+        products[2] = new Fruit(3,7, "Pear", "100g", 60);
     }
 
     @Override
@@ -21,9 +21,9 @@ public class VendingMachineImplementation implements VendingMachine{
     public Product request(int productNumber) {
         for (Product product : products){
             if (productNumber == product.getProductNumber()){
-                System.out.println(product.use());
                 if(depositPool > product.getPrice()){
                     depositPool -= product.getPrice();
+                    System.out.println(product.use());
                 }else{ System.out.println("Need more money to add item"); }
             }
         }
@@ -32,7 +32,9 @@ public class VendingMachineImplementation implements VendingMachine{
 
     @Override
     public int endSession() {
-        return depositPool = 0;
+        int change = depositPool;
+        depositPool = 0;
+        return change;
     }
 
     @Override

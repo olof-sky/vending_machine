@@ -33,11 +33,11 @@ public class Cider implements Product{
 
     @Override
     public String examine() {
-        return "name: " + name + " / size: " + size + " / allergens: " + allergens + " / calories: " + calories + " / packaging: " + packaging;
+        return "name: " + name + " / price: " + price + "kr" + " / size: " + size + " / allergens: " + allergens + " / calories: " + calories + " / packaging: " + packaging;
     }
 
     @Override
     public String use() {
-        return "You bought " + name;
+        return "You bought " + name + " for " + price + "kr";
     }
 }

@@ -27,11 +27,11 @@ public class Fruit implements Product{
 
     @Override
     public String examine() {
-        return "name: " + name + " / size: " + size  + " / calories: " + calories;
+        return "name: " + name + " / price: " + price + "kr" + " / size: " + size  + " / calories: " + calories;
     }
 
     @Override
     public String use() {
-        return "You bought " + name;
+        return "You bought " + name + " for " + price + "kr";
     }
 }

@@ -27,7 +27,8 @@ public class App {
                     "2. Buy products\n" +
                     "3. View all products\n" +
                     "4. View product description\n" +
-                    "6. Examine product\n");
+                    "5. Check balance\n" +
+                    "6. End session\n");
             System.out.print("Pick an operation: ");
             int toDo = scanner.nextInt();
             switch(toDo){
@@ -35,7 +36,7 @@ public class App {
                     break;
                 case 2: buy.buyProduct();
                     break;
-                case 3: for (int i = 0; i< getVendingMachineInstance().getProducts().length + 1;i++)
+                case 3: for (int i = 1; i< getVendingMachineInstance().getProducts().length + 1;i++)
                     { System.out.println(getVendingMachineInstance().getDescription(i));}
                     break;
                 case 4: System.out.println("\nWhich product would you like to view?");
@@ -45,6 +46,12 @@ public class App {
                     System.out.print("\nChoose product: ");
                     int productNumber = scanner.nextInt();
                     System.out.println(getVendingMachineInstance().getDescription(productNumber));
+                    break;
+                case 5: System.out.println("\nYou have " + getVendingMachineInstance().getBalance() + "kr in the deposit.");
+                    break;
+                case 6:
+                    System.out.println("You get " + getVendingMachineInstance().endSession() + "kr back in change. Have a good day.");
+                    run = false;
                     break;
             }
         }
