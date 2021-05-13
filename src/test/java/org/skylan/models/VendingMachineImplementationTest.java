@@ -33,6 +33,13 @@ class VendingMachineImplementationTest {
     }
 
     @Test
+    void requestWithNoMoney() {
+        Product expected = null;
+        Product actual = vendingMachine.request(1);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void failedRequestProductNumberNull() {
         vendingMachine.addCurrency(AcceptedValues.FIFTY.getMoney());
         assertThrows(RuntimeException.class, () -> {
