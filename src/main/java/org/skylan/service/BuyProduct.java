@@ -16,6 +16,8 @@ public class BuyProduct {
             int choice = scanner.nextInt();
             try {
                 System.out.println(App.getVendingMachineInstance().request(choice).use());
+            } catch (ArrayIndexOutOfBoundsException productNotInList) {
+                    System.out.println("Product is not in list");
             } catch (NullPointerException needMoreMoney) {
                 System.out.println("Not enough money in the deposit");
             }

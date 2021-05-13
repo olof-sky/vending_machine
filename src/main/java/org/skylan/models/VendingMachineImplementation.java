@@ -19,9 +19,12 @@ public class VendingMachineImplementation implements VendingMachine{
 
     @Override
     public Product request(int productNumber) {
+        if (productNumber > products.length + 1){
+            throw new ArrayIndexOutOfBoundsException();
+        }
         for (Product product : products){
-            if (productNumber == product.getProductNumber()){
-                if(depositPool > product.getPrice()){
+            if (productNumber == product.getProductNumber()) {
+                if (depositPool > product.getPrice()) {
                     depositPool -= product.getPrice();
                     return product;
                 }

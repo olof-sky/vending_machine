@@ -1,10 +1,8 @@
 package org.skylan.models;
 
-import com.sun.xml.internal.fastinfoset.util.StringArray;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Array;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
